@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 大标题样式，添加背景图片和半透明层 */
+        .main-title {
+            text-align: center;
+            font-size: 3em;
+            font-weight: bold;
+            color: white;
+            padding: 100px 20px;
+            position: relative;
+            background-image: url('Background.jpeg'); /* 添加背景图片 */
+            background-size: cover; /* 覆盖整个区域 */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 半透明背景叠加层，确保文字可读 */
+        .main-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色层 */
+            z-index: 0;
+        }
+
+        .main-title h1 {
+            position: relative;
+            z-index: 1; /* 确保文字显示在叠加层之上 */
+        }
+
+        /* 关于我部分 */
+        .about-me {
+            padding: 50px;
+            text-align: center;
+            background-color: #f4f4f4;
+            position: relative;
+            margin-left: 20px; /* 向右靠拢 */
+            margin-right: 20px; /* 增加右边距 */
+            max-width: calc(100% - 40px); /* 确保内容不会超出视口 */
+        }
+
+        .about-me img {
+            width: 150px; /* 设置图片的宽度 */
+            height: auto;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 20px; /* 图片距底部的距离 */
+            left: 20px; /* 图片距左侧的距离 */
+            z-index: 2; /* 确保图片显示在文本的前面 */
+        }
+
+        header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        /* 项目格子的布局样式 */
+        #portfolio {
+            position: relative;
+            padding: 50px;
+            text-align: center;
+            background-color: #fff;
+            background-image: url('Background3.jpeg'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
+        }
+
+        /* 半透明背景叠加层 */
+        #portfolio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色叠加层 */
+            z-index: 0;
+        }
+
+        .projects-grid {
+            position: relative;
+            z-index: 1; /* 确保项目内容显示在叠加层之上 */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .project {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        #contact {
+            padding: 50px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        #contact h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1em;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-title">
+        <h1>Welcome to My Portfolio</h1>
+<p>Discover my work and skills</p>
+    </div>
+
+    <section class="about-me">
+        <header>
+            <h1>About Me</h1>
+            <img src="Picture.jpeg" alt="About Me Image">
+            <p>My name is Lee Wai Keong. I am a DITN Student at INTI International University.</p>
+            <p>Here I would like to say something about me, last sem I also finished my internship, I learnt</p> 
+            <p>some skills like java, c++ and python during my internship.</p>
+            <p>For a moment, the following things are things I've learnt from the company.</p>
+            <p>I still doing part time at the company</p>
+        </header>
+    </section>
+
+    <!-- 项目部分，使用grid布局项目 -->
+    <section id="portfolio">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project">
+                <img src="Microbit.jpeg" alt="Project 1">
+                <h3>Microbit</h3>
+                <p>Using Microbit doing a Mini Walking Robot</p>
+            </div>
+            <div class="project">
+                <img src="arduino.jpeg" alt="Project 2">
+                <h3>Arduino</h3>
+                <p>Using Arduino doing a Robot arm</p>
+            </div>
+            <div class="project">
+                <img src="MITApp.jpeg" alt="Project 3">
+                <h3>MITApp</h3>
+                <p>Using MIT App Inventor to create mobile apps</p>
+            </div>
+            <div class="project">
+                <img src="Scartch.jpeg" alt="Project 4">
+                <h3>Scratch</h3>
+                <p>Using Scratch to create mini games</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea><br><br>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Lee Wai Keong]. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
